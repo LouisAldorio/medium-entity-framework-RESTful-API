@@ -9,7 +9,7 @@ import (
 
 func registerUserRouter(r *mux.Router) {
 
-	userRouter := r.PathPrefix("todo").Subrouter()
+	userRouter := r.PathPrefix("/user").Subrouter()
 	userRouter.HandleFunc("/", controller.UserGetAllController).Methods(http.MethodGet)
 	userRouter.HandleFunc("/{id}", controller.UserGetByIDController).Methods(http.MethodGet)
 	userRouter.HandleFunc("/", controller.UserCreateController).Methods(http.MethodPost)
